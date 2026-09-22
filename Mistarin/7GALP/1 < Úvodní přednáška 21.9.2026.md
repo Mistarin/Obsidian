@@ -1,5 +1,3 @@
-# Úvodní přednáška
-
 ## Elektromagnetické záření a barvy
 
 - Barvy souvisejí s elektromagnetickým zářením o určité vlnové délce.

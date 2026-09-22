@@ -3,3 +3,7 @@
 Databázový systém tvoří systém řízení báze dat a báze dat. Jako příklad je uveden Oracle.
 
 <small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
+
+Systém řízení báze dat zajišťuje správu a práci s daty, zatímco báze dat obsahuje samotná uložená data.
+
+<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>

@@ -21,4 +21,4 @@ V návrhu databáze model popisuje například:
 
 Databázový model je tedy abstrakce reálného systému převedená do struktury, podle které lze databázi navrhnout a následně vytvořit.
 
-Zpět na [[Úvodní hodina]].
+Zpět na [[Úvodní hodina 21.9.2026]].

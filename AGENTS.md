@@ -96,6 +96,31 @@ Process the request in this order:
    create the link to it.
 4. Apply the link format from the preceding section and verify the target.
 
+### `??` expansion and `?!` subpage explanation
+
+Treat any non-empty text immediately followed by `??` as a request to expand
+the text and provide a clear explanation in the current note:
+
+```text
+<text>??
+```
+
+Treat any non-empty text immediately followed by `?!` as a request to provide
+the explanation in a dedicated subpage and link that subpage to the triggering
+text:
+
+```text
+<text>?!
+```
+
+For `?!`, search for an existing relevant subpage first and reuse it instead
+of creating a duplicate. If none exists, create the subpage in the parent
+note's `Odkaz/` folder, add the explanation there, create the link from the
+parent note, and follow the link creation convention above. Preserve existing
+content and verify the new link target.
+
+<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
+
 ### AI-generated-content disclaimer
 
 Append this disclaimer to the end of every AI-generated paragraph:
@@ -202,8 +227,71 @@ For a request such as “format GALP nicely”:
    headings/list items when useful, and check that no paragraphs disappeared.
    If the note contains Obsidian/plugin blocks, validate their delimiters and
    leave their syntax unchanged.
+5. Prefer a clear information flow over wide tables: state the main idea first,
+   place supporting detail in a collapsible Obsidian callout such as
+   `> [!info]- Podrobnosti`, or link to an existing detailed note. Use a table
+   only when a side-by-side comparison is genuinely clearer.
+6. When a topic needs more than a short summary, create a dedicated child note
+   in the parent note's `Odkaz/` folder, keep the parent note concise, and link
+   to the child note. Keep broader explanations in the child note rather than
+   expanding the parent with long blocks or wide tables.
 
-## Plugin selection at a glance
+## Plugin selection decision process
+
+Before using a plugin, identify the requested outcome and apply the first
+matching rule below. Use the plugin's documented workflow and keep the
+underlying Markdown or other source file as the source of truth.
+
+<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
+
+1. If the task only requires reading, editing, formatting, linking, or
+   explaining portable Markdown and no plugin behavior is needed, use standard
+   Markdown and built-in tools without a plugin.
+2. If the task edits, formats, sorts, or calculates a Markdown table, use
+   **Advanced Tables**.
+3. If an AI agent must read, explain, search, transform, or create vault
+   content, use **Copilot**.
+4. If the task builds a live list, table, calendar, calculation, or task view
+   from note metadata, use **Dataview**.
+5. If the task creates a diagram, flowchart, visual map, or annotated visual
+   note, use **Excalidraw**.
+6. If the task reviews, versions, backs up, commits, or synchronizes vault
+   changes, use **Git**.
+7. If the task assigns decorative icons to files, folders, notes, tabs, or
+   text, use **Iconize**.
+8. If the task migrates content from another application or file format, use
+   **Importer**.
+9. If the task organizes cards by workflow state, use **Kanban**.
+10. If the task performs fast ranked full-text or attachment search, use
+    **Omnisearch**.
+11. If the task reorders, indents, folds, or navigates nested lists, use
+    **Outliner**.
+12. If the task captures content or chains repeatable commands and scripts,
+    use **QuickAdd**.
+13. If the task only reopens or navigates recently used notes, use **Recent
+    Files**.
+14. If the task finds semantically related notes or concepts, use **Smart
+    Connections**.
+15. If the task tracks, filters, schedules, or queries actionable tasks, use
+    **Tasks**.
+16. If the task generates dynamic note content from a template, use
+    **Templater**.
+
+If multiple rules match, choose the plugin that owns the primary output and
+source of truth; add another plugin only when its separate behavior is
+required. If no rule matches, use standard Obsidian functionality and plain
+Markdown, then consult the enabled-plugin list and relevant documentation
+before introducing a new plugin workflow.
+
+<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
+
+After choosing a plugin, read the relevant note and plugin documentation
+before changing anything, request approval for sensitive or destructive
+actions, and verify the resulting source files afterward.
+
+<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
+
+### Plugin selection at a glance
 
 | Need | Use first | Output/source of truth |
 | --- | --- | --- |
