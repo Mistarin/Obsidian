@@ -119,19 +119,26 @@ note's `Odkaz/` folder, add the explanation there, create the link from the
 parent note, and follow the link creation convention above. Preserve existing
 content and verify the new link target.
 
-<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
+### Rich text formatting and styling guidelines
 
-### AI-generated-content disclaimer
+Actively use rich Markdown formatting in note text to enhance visual hierarchy, scannability, and clarity:
 
-Append this disclaimer to the end of every AI-generated paragraph:
+- **Bold (`**text**`)**: Highlight key terms, fundamental concepts, definitions, and main takeaways.
+- *Italics (`*text*`)*: Secondary notes, Latin/English technical terms, variable explanations, and subtle remarks.
+- ==Highlight (`==text==`)==: Use Obsidian highlight syntax for critical exam points, crucial definitions, core formulas, and must-remember facts.
+- Citations & Callouts (`> text`): Use standard blockquotes for lecture definitions, and Obsidian callouts (`> [!NOTE] Title\n> Contents`, `> [!info]`, `> [!example]`, etc.) for key takeaways and emphasized context.
+- Dividers (`---`): Use horizontal rules to cleanly separate logical topics and sections.
 
-```html
-<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
-```
+### Do not add AI disclaimers
 
-Place the disclaimer after the paragraph or block it describes. Never insert
-it inside YAML frontmatter, a fenced code block, a Dataview/Tasks query, or
-other plugin syntax.
+Do **not** add AI-generated-content disclaimers (e.g., `<small><span style="color: gray;">Tento odstavec byl vygenerován AI...</span></small>`). Keep notes clean, authentic, and free of automated AI tags or disclaimers unless explicitly requested by the user.
+
+### Plain, human-friendly language (psát lidsky a srozumitelně)
+
+Avoid unnecessarily complicated, rigid, or academic definitions. Write notes clearly, naturally, and with human accessibility in mind:
+- **Prefer simple, everyday words over heavy jargon**: Whenever an intuitive equivalent exists, use it or provide it prominently (e.g. use *trvalý / stálý* instead of *perzistentní*, *souběžný přístup* instead of *konkurentní přístup*, etc.).
+- **Explain concepts intuitively**: Pair formal definitions with practical analogies or simple real-world explanations rather than dry textbook jargon.
+- **Maintain precision without academic fluff**: Keep core distinctions accurate (e.g. data vs. information), but explain them in language that is straightforward to read and study.
 
 ### Task, checklist, and context commands
 
@@ -174,14 +181,12 @@ Apply these rules when processing task commands:
 7. Use `<<` as a read-only lookup by default. Search exact paths and titles,
    then the current folder, then the rest of the vault; verify every linked
    target before presenting the overview.
-8. Append the AI disclaimer after the complete generated task/checklist block,
-   not inside the task list. Keep it outside YAML, code fences, Dataview,
-   Tasks queries, and other plugin syntax.
+8. Do not add AI disclaimers to generated tasks or checklists.
 
 After a task or checklist operation, verify the destination note, checkbox
-syntax, item count, duplicate handling, preserved links, and disclaimer
-placement. The Tasks plugin may render or query these Markdown tasks, but the
-task lines in their source notes remain the canonical data.
+syntax, item count, duplicate handling, and preserved links. The Tasks plugin
+may render or query these Markdown tasks, but the task lines in their source
+notes remain the canonical data.
 
 ### Do not repeat a failed check blindly
 
@@ -236,13 +241,24 @@ For a request such as “format GALP nicely”:
    to the child note. Keep broader explanations in the child note rather than
    expanding the parent with long blocks or wide tables.
 
+### UVDT terminological rules: Data vs. Informace
+
+When editing, structuring, or generating content for **7UVDT** (and general database / information systems notes):
+
+1. **Never interchange "data" and "informace".** There is a fundamental conceptual difference between them:
+   - **Data (údaje)**: Raw, uninterpreted symbols, values, characters, or measurements (e.g. numbers `120/80`, raw text, byte values). By themselves, data ==do not provide information== if they lack context, schema, units, or interpretation rules.
+   - **Informace (Information)**: Data that have been processed, given meaning, and placed into context so that they can be reasonably interpreted. Crucial definition: *„Informace je sdělení, které odstraňuje v příjemci informace neurčitost, resp. neznalost.“*
+2. **Respect database vs. information system terminology**:
+   - A database (báze dat / databázový systém) primarily stores and organizes **data**.
+   - Redundancy in database context is **redundance dat** (identical data/values stored in multiple places), never "redundance informací".
+   - Do not substitute one word for the other for stylistic variation; always use the conceptually accurate term.
+3. **Use human-friendly, plain language**: Avoid overly complicated textbook definitions. Wherever an accessible term exists, prefer it or state it clearly (e.g. use *trvalý / stálý (uložený na disk)* instead of *perzistentní*, *souběžný přístup* instead of *konkurentní přístup*, etc.).
+
 ## Plugin selection decision process
 
 Before using a plugin, identify the requested outcome and apply the first
 matching rule below. Use the plugin's documented workflow and keep the
 underlying Markdown or other source file as the source of truth.
-
-<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
 
 1. If the task only requires reading, editing, formatting, linking, or
    explaining portable Markdown and no plugin behavior is needed, use standard
@@ -283,13 +299,9 @@ required. If no rule matches, use standard Obsidian functionality and plain
 Markdown, then consult the enabled-plugin list and relevant documentation
 before introducing a new plugin workflow.
 
-<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
-
 After choosing a plugin, read the relevant note and plugin documentation
 before changing anything, request approval for sensitive or destructive
 actions, and verify the resulting source files afterward.
-
-<small><span style="color: gray;">Tento odstavec byl vygenerován AI. Ověřte správnost.</span></small>
 
 ### Plugin selection at a glance
 
